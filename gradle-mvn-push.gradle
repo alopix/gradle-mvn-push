@@ -100,6 +100,7 @@ afterEvaluate { project ->
             classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
             exclude '**/BuildConfig.java'
             exclude '**/R.java'
+            options.addStringOption('Xdoclint:none', '-quiet')
         }
 
         javadocTask.dependsOn variant.javaCompile
